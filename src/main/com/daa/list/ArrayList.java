@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.daa.list;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

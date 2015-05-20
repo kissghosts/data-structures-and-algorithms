@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.daa.list;
 
 public class ArrayStack<T> {
     private int topOfStack;

@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.daa.list;
 
 public class LinkedList<T> implements Iterable<T> {
     

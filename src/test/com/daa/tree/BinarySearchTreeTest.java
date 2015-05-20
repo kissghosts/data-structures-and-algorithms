@@ -1,4 +1,4 @@
-package com.data.structure;
+package com.daa.tree;
 
 public class BinarySearchTreeTest{
     public static void main(String[] args) {
