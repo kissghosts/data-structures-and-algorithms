@@ -5,7 +5,7 @@ public class BinarySearchTreeTest{
         int[] a = {6, 2, 8, 1, 4, 3, 7};
         BinarySearchTree<Integer> t = new BinarySearchTree<>();
 
-        for (int each: a) {
+        for (int each : a) {
             System.out.println(each);
             t.insert(each);
         }

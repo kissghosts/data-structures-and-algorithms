@@ -132,6 +132,12 @@ public class AVLTree<T extends Comparable<? super T>> {
             } else {
                 n = doubleWithLeftChild(n);
             }
+        } else if (height(n.right) - height(n.left) > ALLOWED_IMBALANCE) {
+            if (height(n.right.right) >= height(n.right.left)) {
+                n = rotateWithRightChild(n);
+            } else {
+                n = doubleWithRightChild(n);
+            }
         }
 
         n.height = 1 + Math.max(height(n.left), height(n.right));
