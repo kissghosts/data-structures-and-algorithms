@@ -1,4 +1,4 @@
-package com.daa.list;
+package list;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

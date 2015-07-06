@@ -1,4 +1,4 @@
-package com.daa.tree;
+package tree;
 
 
 public class BinarySearchTree<T extends Comparable<? super T>> {
@@ -175,5 +175,28 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         }
 
         return n;
+    }
+
+
+    /******************************
+    * Testing
+    *******************************/
+    public static void main(String[] args) {
+        int[] a = {6, 2, 8, 1, 4, 3, 7};
+        BinarySearchTree<Integer> t = new BinarySearchTree<>();
+
+        for (int each : a) {
+            System.out.println(each);
+            t.insert(each);
+        }
+
+        t.printTreePreOrder();
+
+
+        t.remove(7);
+        t.printTreePreOrder();
+
+        t.remove(2);
+        t.printTreePreOrder();
     }
 }

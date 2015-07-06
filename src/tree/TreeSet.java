@@ -1,4 +1,4 @@
-package com.daa.tree;
+package tree;
 
 // java requires O(log(n)) on add, remove, and contains for TreeSet
 // so a balanced tree is required (red-black tree, avl tree)
@@ -54,4 +54,29 @@ public class TreeSet<T extends Comparable<? super T>> {
 
     // first(), last()
 
+
+
+
+    /************************************
+    * Testing
+    *************************************/
+    public static void main (String[] args) {
+        TreeSet<Integer> t = new TreeSet<>();
+
+        System.out.println("currnt size: " + t.size());
+
+        int[] a = {6, 2, 8, 1, 4, 3, 7};
+        for (int each : a) {
+            t.add(each);
+        }
+        System.out.println("current size: " + t.size());
+
+        t.remove(6);
+
+        System.out.println("current size: " + t.size());
+
+        t.remove(100);
+
+        System.out.println("current size: " + t.size());
+    }
 }

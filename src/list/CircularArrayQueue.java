@@ -1,4 +1,4 @@
-package com.daa.list;
+package list;
 
 public class CircularArrayQueue<T> {
     private int head;

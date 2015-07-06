@@ -1,4 +1,4 @@
-package com.daa.tree;
+package tree;
 
 public class AVLTree<T extends Comparable<? super T>> {
     private static class AVLNode<T> {
