@@ -1,6 +1,9 @@
 package sort;
 
 public class Sort {
+    /*
+    * insertion sort
+    */
     public static <T extends Comparable<? super T>> void insertionSort(T[] a) {
         for (int i = 1; i < a.length; i++) {
             T tmp = a[i];
@@ -12,17 +15,21 @@ public class Sort {
         }
     }
 
+
+
+
+    /*
+    * heap sort
+    */
     public static <T extends Comparable<? super T>> void heapSort(T[] a) {
         // build the max-heap
-        for (int i = a.length / 2 - 1; i > 0; i--) {
+        for (int i = a.length / 2 - 1; i >= 0; i--) {
             percolateDown(a, i, a.length);
         }
 
         // heap sort
         for (int i = a.length - 1; i > 0; i--) {
-            T tmp = a[i]; // swap a[i] and a[0]
-            a[i] = a[0];
-            a[0] = tmp;
+            swap(a, 0, i);
             percolateDown(a, 0, i);
         }
 
@@ -51,6 +58,11 @@ public class Sort {
         a[i] = tmp;
     }
 
+
+
+    /*
+    * merge sort
+    */
     public static <T extends Comparable<? super T>> 
     void mergeSort(T[] a) {
         T[] tmpArray = (T[]) new Comparable[a.length];
@@ -97,13 +109,49 @@ public class Sort {
 
 
 
+    /*
+    * quick sort
+    */
+    public static <T extends Comparable<? super T>>
+    void quickSort(T[] a) {
+        quickSort(a, 0, a.length - 1);
+    }
+
+    private static <T extends Comparable<? super T>>
+    void quickSort(T[] a, int left, int right) {
+        // how to choose pivot affects the final performance
+        T pivot = a[right];
+
+        int i = left - 1, j = left;
+        for (; j < right; j++) {
+            if (a[j].compareTo(pivot) <= 0) {
+                i++;
+                swap(a, i, j);
+            }
+        }
+        swap(a, i + 1, right);
+
+        // recursive sorting
+        quickSort(a, left, i);
+        quickSort(a, i + 2, right);
+
+    }
+
+    private static <T extends Comparable<? super T>>
+    void swap(T[] a, int x, int y) {
+        T tmp = a[x];
+        a[x] = a[y];
+        a[y] = tmp;
+    }
+
+
 
     /*****************************************
     *               Testing
     ******************************************/
     public static void main(String[] args) {
-        Integer[] a = {34, 8, 64, 51, 32, 21};
-        mergeSort(a);
+        Integer[] a = {34, 8, 64, 51, 34, 32, 21};
+        quickSort(a);
         for (int i : a) {
             System.out.print(i + " ");
         }
