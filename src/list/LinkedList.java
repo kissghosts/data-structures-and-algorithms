@@ -122,7 +122,7 @@ public class LinkedList<T> implements Iterable<T> {
         }
 
         public T next() {
-            if (modNum != modNum) {
+            if (modNum != modCount) {
                 throw new java.util.ConcurrentModificationException();
             }
             if (!hasNext()) {
@@ -136,7 +136,7 @@ public class LinkedList<T> implements Iterable<T> {
         }
         
         public void remove() {
-            if (modNum != modNum) {
+            if (modNum != modCount) {
                 throw new java.util.ConcurrentModificationException();
             }
             if (!okToRemove) {
