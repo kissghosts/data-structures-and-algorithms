@@ -7,15 +7,18 @@ public class RadixSort {
 
     // using additional Arraylist<String>[]
     public static void listSort(String[] arr, int strLen) {
-        ArrayList<ArrayList<String>> buckets = new ArrayList<>();
+        // ArrayList<ArrayList<String>> buckets = new ArrayList<>();
+        ArrayList<String>[] buckets = new ArrayList[BUCKETS];
 
         for (int i = 0; i < BUCKETS; i++) {
-            buckets.add(i, new ArrayList<String>());
+            // buckets.add(i, new ArrayList<String>());
+            buckets[i] = new ArrayList<>();
         }
 
         for (int pos = strLen - 1; pos >= 0; pos--) {
             for (String s : arr) {
-                buckets.get(s.charAt(pos)).add(s);
+                // buckets.get(s.charAt(pos)).add(s);
+                buckets[s.charAt(pos)].add(s);
             }
 
             int index = 0;
